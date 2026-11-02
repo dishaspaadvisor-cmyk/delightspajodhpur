@@ -1,0 +1,695 @@
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 700px;
+  overflow: hidden;
+}
+
+
+/* =====================================================
+   DESKTOP
+===================================================== */
+
+.hero-desktop {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+
+/* =====================================================
+   DESKTOP SLIDES
+===================================================== */
+
+.hero-slides {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-size: cover;
+  background-position: top;
+
+
+  opacity: 0;
+  visibility: hidden;
+
+  transform: scale(1.03);
+
+  transition:
+    opacity 0.8s ease,
+    transform 1.2s ease,
+    visibility 0.8s ease;
+}
+
+.hero-slide.active {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+
+
+/* =====================================================
+   OVERLAY
+===================================================== */
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(10, 7, 6, 0.82) 0%,
+      rgba(10, 7, 6, 0.52) 45%,
+      rgba(10, 7, 6, 0.18) 100%
+    );
+}
+
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.hero-content {
+  position: relative;
+  z-index: 5;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+}
+
+.hero-content-inner {
+  position: relative;
+
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+  padding: 100px 30px 40px;
+}
+
+.hero-slide-content {
+  position: absolute;
+
+  max-width: 700px;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transform: translateY(25px);
+
+  transition:
+    opacity 0.6s ease,
+    transform 0.7s ease,
+    visibility 0.6s ease;
+}
+
+.hero-slide-content.active {
+  position: relative;
+
+  opacity: 1;
+  visibility: visible;
+
+  transform: translateY(0);
+}
+
+
+/* =====================================================
+   EYEBROW
+===================================================== */
+
+.hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-bottom: 18px;
+
+  color: #d4af37;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 3px;
+}
+
+.hero-eyebrow span {
+  display: block;
+
+  width: 35px;
+  height: 1px;
+
+  background: #d4af37;
+}
+
+
+/* =====================================================
+   TITLE
+===================================================== */
+
+.hero-slide-content h1 {
+  margin: 0;
+
+  color: #fff;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(48px, 5vw, 76px);
+  line-height: 1.05;
+  font-weight: 400;
+
+  max-width: 750px;
+}
+
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+
+.hero-description {
+  max-width: 600px;
+
+  margin: 25px 0 0;
+
+  color: rgba(255, 255, 255, 0.82);
+
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  margin-top: 32px;
+}
+
+.hero-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 50px;
+
+  padding: 0 24px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.hero-button-primary {
+  background: #d4af37;
+  color: #160f0e;
+}
+
+.hero-button-primary:hover {
+  background: #f0d477;
+  transform: translateY(-2px);
+}
+
+.hero-button-secondary {
+  border: 1px solid rgba(255, 255, 255, 0.55);
+
+  color: #fff;
+
+  background: rgba(0, 0, 0, 0.12);
+}
+
+.hero-button-secondary:hover {
+  background: #fff;
+  color: #2b1d1b;
+}
+
+
+/* =====================================================
+   ARROWS
+===================================================== */
+
+.hero-arrow {
+  position: absolute;
+  z-index: 10;
+
+  top: 50%;
+
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.35);
+
+  background: rgba(0, 0, 0, 0.25);
+
+  color: #fff;
+
+  cursor: pointer;
+
+  transform: translateY(-50%);
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.hero-arrow:hover {
+  background: #d4af37;
+  border-color: #d4af37;
+  color: #160f0e;
+}
+
+.hero-arrow-left {
+  left: 30px;
+}
+
+.hero-arrow-right {
+  right: 30px;
+}
+
+
+/* =====================================================
+   COUNTER
+===================================================== */
+
+.hero-counter {
+  position: absolute;
+  z-index: 10;
+
+  right: 70px;
+  bottom: 80px;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  color: #fff;
+
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.hero-counter-line {
+  width: 90px;
+  height: 1px;
+
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.hero-counter-line span {
+  display: block;
+
+  height: 1px;
+
+  background: #d4af37;
+
+  transition: width 0.5s ease;
+}
+
+
+/* =====================================================
+   DOTS
+===================================================== */
+
+.hero-dots {
+  position: absolute;
+  z-index: 10;
+
+  left: 50%;
+  bottom: 35px;
+
+  display: flex;
+  gap: 8px;
+
+  transform: translateX(-50%);
+}
+
+.hero-dot {
+  width: 7px;
+  height: 7px;
+
+  padding: 0;
+
+  border: 0;
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.45);
+
+  cursor: pointer;
+
+  transition:
+    width 0.25s ease,
+    background 0.25s ease;
+}
+
+.hero-dot.active {
+  width: 25px;
+
+  border-radius: 10px;
+
+  background: #d4af37;
+}
+
+
+/* =====================================================
+   SCROLL
+===================================================== */
+
+.hero-scroll {
+  position: absolute;
+  z-index: 10;
+
+  left: 30px;
+  bottom: 35px;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  color: rgba(255, 255, 255, 0.75);
+
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+.hero-scroll-line {
+  width: 40px;
+  height: 1px;
+
+  background: #d4af37;
+}
+
+
+/* =====================================================
+   MOBILE HERO
+===================================================== */
+
+.hero-mobile {
+  display: none;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+  .hero {
+    height: 100svh;
+    min-height: 650px;
+  }
+
+  /* Hide desktop completely */
+
+  .hero-desktop {
+    display: none;
+  }
+
+  /* Show mobile */
+
+  .hero-mobile {
+    position: relative;
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+  }
+
+
+  /* =================================================
+     VIDEO
+  ================================================= */
+
+  .hero-mobile-video {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+  }
+
+
+  /* =================================================
+     MOBILE OVERLAY
+  ================================================= */
+
+  .hero-mobile-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+      linear-gradient(
+        180deg,
+        rgba(10, 7, 6, 0.35) 0%,
+        rgba(10, 7, 6, 0.45) 40%,
+        rgba(10, 7, 6, 0.88) 100%
+      );
+  }
+
+
+  /* =================================================
+     MOBILE CONTENT
+  ================================================= */
+
+  .hero-mobile-content {
+    position: relative;
+    z-index: 5;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    padding: 40px 20px 35px;
+  }
+
+
+  /* =================================================
+     MOBILE SLIDES
+  ================================================= */
+
+  .hero-mobile-slide {
+    display: none;
+
+    max-width: 100%;
+  }
+
+  .hero-mobile-slide.active {
+    display: block;
+
+    animation: mobileHeroFade 0.6s ease;
+  }
+
+  @keyframes mobileHeroFade {
+    from {
+      opacity: 0;
+      transform: translateY(15px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+
+  /* =================================================
+     EYEBROW
+  ================================================= */
+
+  .hero-mobile-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 12px;
+
+    color: #d4af37;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+  }
+
+  .hero-mobile-eyebrow span {
+    width: 25px;
+    height: 1px;
+
+    background: #d4af37;
+  }
+
+
+  /* =================================================
+     TITLE
+  ================================================= */
+
+  .hero-mobile-slide h1 {
+    margin: 0;
+
+    color: #fff;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 39px;
+    line-height: 1.08;
+    font-weight: 400;
+  }
+
+
+  /* =================================================
+     DESCRIPTION
+  ================================================= */
+
+  .hero-mobile-description {
+    margin: 16px 0 0;
+
+    color: rgba(255, 255, 255, 0.82);
+
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+
+  /* =================================================
+     MOBILE CALL / WHATSAPP
+  ================================================= */
+
+  .hero-mobile-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+
+    margin-top: 22px;
+  }
+
+  .hero-mobile-actions a {
+    min-height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    transition:
+      transform 0.25s ease,
+      opacity 0.25s ease;
+  }
+
+  .hero-mobile-actions a:active {
+    transform: scale(0.97);
+  }
+
+
+  /* CALL */
+
+  .hero-mobile-call {
+    background: #d4af37;
+
+    color: #160f0e;
+  }
+
+
+  /* WHATSAPP */
+
+  .hero-mobile-whatsapp {
+    background: #25d366;
+
+    color: #fff;
+  }
+
+
+  /* =================================================
+     MOBILE DOTS
+  ================================================= */
+
+  .hero-mobile-dots {
+    display: flex;
+    justify-content: center;
+
+    gap: 7px;
+
+    margin-top: 25px;
+  }
+
+  .hero-mobile-dots button {
+    width: 7px;
+    height: 7px;
+
+    padding: 0;
+
+    border: 0;
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.45);
+  }
+
+  .hero-mobile-dots button.active {
+    width: 24px;
+
+    border-radius: 10px;
+
+    background: #d4af37;
+  }
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 380px) {
+
+  .hero-mobile-content {
+    padding: 30px 16px 25px;
+  }
+
+  .hero-mobile-slide h1 {
+    font-size: 32px;
+  }
+
+  .hero-mobile-description {
+    font-size: 13px;
+  }
+
+  .hero-mobile-actions a {
+    min-height: 46px;
+  }
+}

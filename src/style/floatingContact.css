@@ -1,0 +1,308 @@
+/* =====================================================
+   FLOATING CONTACT
+===================================================== */
+
+.floating-contact {
+  position: fixed;
+
+  right: 22px;
+  bottom: 25px;
+
+  z-index: 9999;
+
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+
+/* =====================================================
+   BUTTON
+===================================================== */
+
+.floating-contact-button {
+  position: relative;
+
+  width: 56px;
+  height: 56px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  color: #fff;
+
+  text-decoration: none;
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.22);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+/* =====================================================
+   ICON
+===================================================== */
+
+.floating-icon {
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* =====================================================
+   CALL
+===================================================== */
+
+.floating-call {
+  background: linear-gradient(
+    135deg,
+    #8a6508,
+    #d4af37
+  );
+}
+
+
+/* =====================================================
+   WHATSAPP
+===================================================== */
+
+.floating-whatsapp {
+  background: #25d366;
+}
+
+
+/* =====================================================
+   HOVER
+===================================================== */
+
+.floating-contact-button:hover {
+  transform: translateY(-4px) scale(1.06);
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.28);
+}
+
+
+/* =====================================================
+   SHAKE ANIMATION
+===================================================== */
+
+.floating-contact-button .floating-icon {
+  animation: floatingShake 2.5s infinite;
+}
+
+@keyframes floatingShake {
+
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+
+  5% {
+    transform: rotate(-12deg);
+  }
+
+  10% {
+    transform: rotate(12deg);
+  }
+
+  15% {
+    transform: rotate(-10deg);
+  }
+
+  20% {
+    transform: rotate(10deg);
+  }
+
+  25% {
+    transform: rotate(0deg);
+  }
+}
+
+
+/* =====================================================
+   PULSE / RIPPLE
+===================================================== */
+
+.floating-contact-button::before {
+  content: "";
+
+  position: absolute;
+
+  inset: -5px;
+
+  border-radius: 50%;
+
+  border: 2px solid currentColor;
+
+  opacity: 0;
+
+  animation: floatingPulse 2.5s infinite;
+}
+
+@keyframes floatingPulse {
+
+  0% {
+    transform: scale(0.85);
+    opacity: 0.65;
+  }
+
+  70% {
+    transform: scale(1.25);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1.25);
+    opacity: 0;
+  }
+}
+
+
+/* =====================================================
+   SECOND BUTTON DELAY
+===================================================== */
+
+.floating-whatsapp::before {
+  animation-delay: 1.2s;
+}
+
+.floating-whatsapp .floating-icon {
+  animation-delay: 1.2s;
+}
+
+
+/* =====================================================
+   TOOLTIP
+===================================================== */
+
+.floating-tooltip {
+  position: absolute;
+
+  right: 68px;
+
+  top: 50%;
+
+  transform: translateY(-50%) translateX(8px);
+
+  padding: 8px 12px;
+
+  background: #2b1d1b;
+
+  color: #fff;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  white-space: nowrap;
+
+  border-radius: 5px;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    visibility 0.25s ease;
+}
+
+.floating-tooltip::after {
+  content: "";
+
+  position: absolute;
+
+  right: -5px;
+  top: 50%;
+
+  width: 9px;
+  height: 9px;
+
+  background: #2b1d1b;
+
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.floating-contact-button:hover .floating-tooltip {
+  opacity: 1;
+  visibility: visible;
+
+  transform: translateY(-50%) translateX(0);
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+  .floating-contact {
+    right: 15px;
+    bottom: 18px;
+
+    gap: 10px;
+  }
+
+  .floating-contact-button {
+    width: 52px;
+    height: 52px;
+  }
+
+  .floating-contact-button svg {
+    max-width: 23px;
+    max-height: 23px;
+  }
+
+  /* Hide tooltip on mobile */
+
+  .floating-tooltip {
+    display: none;
+  }
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 380px) {
+
+  .floating-contact {
+    right: 12px;
+    bottom: 15px;
+  }
+
+  .floating-contact-button {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+
+/* =====================================================
+   ACCESSIBILITY
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .floating-contact-button .floating-icon,
+  .floating-contact-button::before {
+    animation: none;
+  }
+
+  .floating-contact-button {
+    transition: none;
+  }
+}

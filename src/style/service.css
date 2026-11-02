@@ -1,0 +1,894 @@
+/* =========================================================
+   DELIGHT SPA BRAND COLORS
+========================================================= */
+
+:root {
+  --spa-gold: #D4AF37;
+  --spa-gold-primary: #B8860B;
+  --spa-gold-dark: #8A6508;
+  --spa-gold-light: #F0D477;
+
+  --spa-espresso: #2B1D1B;
+  --spa-black: #0B0908;
+
+  --spa-cream: #F8F3EA;
+  --spa-beige: #E9DDCC;
+
+  --spa-text: #2B1D1B;
+  --spa-text-light: #756761;
+}
+
+
+/* =========================================================
+   SERVICES PAGE
+========================================================= */
+
+.services-page {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  margin: 0;
+
+  /*
+    Same horizontal breathing room as navbar
+  */
+  padding:
+    110px
+    clamp(35px, 5vw, 90px)
+    120px;
+
+  background: var(--spa-cream);
+
+  color: var(--spa-text);
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.services-header {
+  width: 100%;
+  max-width: 900px;
+
+  margin: 0 auto;
+
+  padding-bottom: 90px;
+
+  text-align: center;
+}
+
+.services-eyebrow {
+  margin: 0 0 18px;
+
+  color: var(--spa-gold);
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 4px;
+
+  text-transform: uppercase;
+}
+
+.services-header h1 {
+  margin: 0;
+
+  color: var(--spa-espresso);
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  /*
+    Increased desktop heading
+  */
+  font-size: clamp(
+    65px,
+    7vw,
+    105px
+  );
+
+  font-weight: 500;
+
+  line-height: 0.95;
+
+  letter-spacing: -2px;
+}
+
+.services-intro {
+  max-width: 620px;
+
+  margin: 28px auto 0;
+
+  color: var(--spa-text-light);
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 15px;
+
+  line-height: 1.9;
+}
+
+
+/* =========================================================
+   CATEGORY
+========================================================= */
+
+.service-category {
+  width: 100%;
+
+  max-width: 100%;
+
+  margin: 0 auto 120px;
+}
+
+.service-category:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   CATEGORY TITLE
+========================================================= */
+
+.service-category-title {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  margin-bottom: 65px;
+
+  text-align: center;
+}
+
+.service-category-title h2 {
+  margin: 0;
+
+  color: var(--spa-espresso);
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: clamp(
+    42px,
+    4vw,
+    62px
+  );
+
+  font-weight: 500;
+
+  line-height: 1.1;
+}
+
+.service-category-title::after {
+  content: "";
+
+  width: 75px;
+
+  height: 2px;
+
+  margin-top: 20px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--spa-gold-dark),
+      var(--spa-gold),
+      var(--spa-gold-dark)
+    );
+}
+
+
+/* =========================================================
+   SERVICE GRID
+   LARGE DESKTOP
+========================================================= */
+
+.service-grid {
+  width: 100%;
+
+  max-width: 1450px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  /*
+    Increased from 330px
+  */
+  grid-template-columns:
+    repeat(3, minmax(360px, 400px));
+
+  justify-content: center;
+
+  align-items: start;
+
+  column-gap: 55px;
+
+  row-gap: 90px;
+}
+
+
+/* =========================================================
+   SERVICE CARD
+========================================================= */
+
+.service-card {
+  position: relative;
+
+  width: 100%;
+
+  min-width: 0;
+
+  padding: 11px;
+
+  background: #ffffff;
+
+  border:
+    1px solid
+    rgba(184, 134, 11, 0.16);
+
+  border-radius: 3px;
+
+  text-align: center;
+
+  box-shadow:
+    0 12px 40px
+    rgba(43, 29, 27, 0.07);
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease,
+    border-color 0.4s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+
+  border-color:
+    rgba(212, 175, 55, 0.65);
+
+  box-shadow:
+    0 22px 55px
+    rgba(43, 29, 27, 0.13);
+}
+
+
+/* =========================================================
+   STAGGERED CARDS
+========================================================= */
+
+.service-card:nth-child(3n + 2) {
+  margin-top: 50px;
+}
+
+
+/* =========================================================
+   SERVICE IMAGE
+========================================================= */
+
+.service-image-wrapper {
+  position: relative;
+
+  width: 100%;
+
+  /*
+    Increased desktop image height
+  */
+  height: 450px;
+
+  overflow: hidden;
+
+  border-radius: 2px;
+
+  background: #eee9e2;
+}
+
+.service-image {
+  width: 100%;
+
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  object-position: top;
+
+  transition:
+    transform 0.7s
+    cubic-bezier(
+      0.2,
+      0.7,
+      0.2,
+      1
+    );
+}
+
+.service-card:hover .service-image {
+  transform: scale(1.06);
+}
+
+
+/* =========================================================
+   IMAGE OVERLAY
+========================================================= */
+
+.service-image-wrapper::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(11, 9, 8, 0.18),
+      transparent 45%
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   SERVICE CONTENT
+========================================================= */
+
+.service-content {
+  padding:
+    28px
+    16px
+    22px;
+}
+
+.service-content h3 {
+  margin: 0;
+
+  color: var(--spa-espresso);
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 32px;
+
+  font-weight: 600;
+
+  line-height: 1.2;
+
+  transition:
+    color 0.3s ease;
+}
+
+.service-card:hover .service-content h3 {
+  color: var(--spa-gold-primary);
+}
+
+.service-content p {
+  max-width: 340px;
+
+  min-height: 55px;
+
+  margin: 14px auto 0;
+
+  color: var(--spa-text-light);
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 13px;
+
+  font-weight: 400;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   SERVICE ACTION BUTTONS
+========================================================= */
+
+.service-actions {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 11px;
+
+  margin-top: 25px;
+}
+
+.service-call-btn,
+.service-whatsapp-btn {
+  flex: 1;
+
+  min-width: 0;
+
+  height: 48px;
+
+  padding: 0 14px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 9px;
+
+  border: 1px solid transparent;
+
+  border-radius: 3px;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  text-decoration: none;
+
+  white-space: nowrap;
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.service-call-btn:hover,
+.service-whatsapp-btn:hover {
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   CALL BUTTON
+========================================================= */
+
+.service-call-btn {
+  background: var(--spa-espresso);
+
+  border-color: var(--spa-espresso);
+
+  color: #ffffff;
+}
+
+.service-call-btn:hover {
+  background: var(--spa-gold-primary);
+
+  border-color: var(--spa-gold-primary);
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   WHATSAPP BUTTON
+========================================================= */
+
+.service-whatsapp-btn {
+  background: #218C5A;
+
+  border-color: #218C5A;
+
+  color: #ffffff;
+}
+
+.service-whatsapp-btn:hover {
+  background: #176B43;
+
+  border-color: #176B43;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+   1400px+
+========================================================= */
+
+@media (min-width: 1400px) {
+
+  .services-page {
+    /*
+      Match navbar's maximum spacing
+    */
+    padding-left: 90px;
+
+    padding-right: 90px;
+  }
+
+  .services-header {
+    padding-bottom: 100px;
+  }
+
+  .services-header h1 {
+    font-size: clamp(
+      75px,
+      6vw,
+      110px
+    );
+  }
+
+  .service-grid {
+    max-width: 1500px;
+
+    grid-template-columns:
+      repeat(3, minmax(380px, 420px));
+
+    column-gap: 60px;
+
+    row-gap: 100px;
+  }
+
+  .service-card {
+    width: 100%;
+
+    padding: 12px;
+  }
+
+  .service-image-wrapper {
+    height: 470px;
+  }
+
+  .service-content h3 {
+    font-size: 34px;
+  }
+
+  .service-content p {
+    font-size: 13px;
+  }
+}
+
+
+/* =========================================================
+   4K / VERY LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1800px) {
+
+  .services-page {
+    padding-left: 100px;
+
+    padding-right: 100px;
+  }
+
+  .service-grid {
+    max-width: 1650px;
+
+    grid-template-columns:
+      repeat(3, minmax(400px, 450px));
+
+    column-gap: 65px;
+  }
+
+  .service-image-wrapper {
+    height: 500px;
+  }
+
+  .service-content h3 {
+    font-size: 36px;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .services-page {
+    padding:
+      90px
+      30px
+      100px;
+  }
+
+  .service-grid {
+    grid-template-columns:
+      repeat(3, minmax(270px, 1fr));
+
+    column-gap: 24px;
+
+    row-gap: 65px;
+  }
+
+  .service-card {
+    width: 100%;
+  }
+
+  .service-card:nth-child(3n + 2) {
+    margin-top: 30px;
+  }
+
+  .service-image-wrapper {
+    height: 350px;
+  }
+
+  .service-content {
+    padding:
+      22px
+      8px
+      17px;
+  }
+
+  .service-content h3 {
+    font-size: 27px;
+  }
+
+  .service-content p {
+    font-size: 11px;
+  }
+
+  .service-call-btn,
+  .service-whatsapp-btn {
+    height: 43px;
+
+    padding: 0 7px;
+
+    gap: 6px;
+
+    font-size: 11px;
+  }
+}
+
+
+/* =========================================================
+   TABLET / SMALL LAPTOP
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .service-grid {
+    grid-template-columns:
+      repeat(2, minmax(280px, 330px));
+
+    justify-content: center;
+
+    column-gap: 25px;
+
+    row-gap: 55px;
+  }
+
+  .service-card:nth-child(3n + 2) {
+    margin-top: 0;
+  }
+
+  .service-card:nth-child(even) {
+    margin-top: 35px;
+  }
+
+  .service-image-wrapper {
+    height: 360px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .services-page {
+    width: 100%;
+
+    padding:
+      65px
+      16px
+      75px;
+  }
+
+  .services-header {
+    padding-bottom: 45px;
+  }
+
+  .services-eyebrow {
+    font-size: 10px;
+
+    letter-spacing: 3px;
+  }
+
+  .services-header h1 {
+    font-size: 56px;
+  }
+
+  .services-intro {
+    max-width: 340px;
+
+    margin-top: 20px;
+
+    font-size: 12px;
+
+    line-height: 1.8;
+  }
+
+  .service-category {
+    width: 100%;
+
+    margin-bottom: 70px;
+  }
+
+  .service-category-title {
+    margin-bottom: 30px;
+  }
+
+  .service-category-title h2 {
+    font-size: 39px;
+  }
+
+  .service-category-title::after {
+    width: 50px;
+
+    margin-top: 13px;
+  }
+
+  .service-grid {
+    width: 100%;
+
+    max-width: 440px;
+
+    margin: 0 auto;
+
+    grid-template-columns: 1fr;
+
+    gap: 28px;
+
+    justify-content: center;
+  }
+
+  .service-card {
+    width: 100%;
+
+    max-width: 440px;
+
+    margin: 0 auto;
+
+    padding: 10px;
+  }
+
+  .service-card:nth-child(3n + 2),
+  .service-card:nth-child(even) {
+    margin-top: 0;
+  }
+
+  .service-image-wrapper {
+    width: 100%;
+
+    height: 350px;
+  }
+
+  .service-content {
+    padding:
+      22px
+      12px
+      15px;
+  }
+
+  .service-content h3 {
+    font-size: 29px;
+  }
+
+  .service-content p {
+    max-width: 300px;
+
+    min-height: auto;
+
+    margin-top: 10px;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+  }
+
+  .service-actions {
+    gap: 10px;
+
+    margin-top: 20px;
+  }
+
+  .service-call-btn,
+  .service-whatsapp-btn {
+    height: 46px;
+
+    font-size: 12px;
+
+    gap: 8px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .services-page {
+    padding-left: 12px;
+
+    padding-right: 12px;
+  }
+
+  .service-grid {
+    max-width: 100%;
+  }
+
+  .service-card {
+    max-width: 100%;
+  }
+
+  .service-image-wrapper {
+    height: 300px;
+  }
+
+  .service-content h3 {
+    font-size: 26px;
+  }
+
+  .service-call-btn,
+  .service-whatsapp-btn {
+    height: 43px;
+
+    font-size: 11px;
+
+    gap: 6px;
+  }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+.service-call-btn:focus-visible,
+.service-whatsapp-btn:focus-visible {
+  outline:
+    3px solid
+    var(--spa-gold);
+
+  outline-offset: 3px;
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .service-card,
+  .service-image,
+  .service-content h3,
+  .service-call-btn,
+  .service-whatsapp-btn {
+    transition: none;
+  }
+}

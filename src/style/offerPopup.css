@@ -1,0 +1,419 @@
+/* =====================================================
+   POPUP OVERLAY
+===================================================== */
+
+.offer-popup-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 10000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  background: rgba(10, 7, 6, 0.78);
+
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+
+  animation: offerOverlayFade 0.35s ease;
+}
+
+
+/* =====================================================
+   POPUP
+===================================================== */
+
+.offer-popup {
+  position: relative;
+
+  width: 100%;
+  max-width: 460px;
+
+  overflow: hidden;
+
+  background: #f8f3ea;
+
+  box-shadow:
+    0 25px 80px rgba(0, 0, 0, 0.4);
+
+  animation: offerPopupIn 0.45s ease;
+}
+
+@keyframes offerOverlayFade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes offerPopupIn {
+  from {
+    opacity: 0;
+    transform: translateY(35px) scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+/* =====================================================
+   CLOSE BUTTON
+===================================================== */
+
+.offer-popup-close {
+  position: absolute;
+
+  top: 14px;
+  right: 14px;
+
+  z-index: 10;
+
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.5);
+
+  border-radius: 50%;
+
+  background: rgba(0, 0, 0, 0.45);
+
+  color: #fff;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.offer-popup-close:hover {
+  background: #b8860b;
+  transform: rotate(90deg);
+}
+
+
+/* =====================================================
+   IMAGE
+===================================================== */
+
+.offer-popup-image {
+  position: relative;
+
+  width: 100%;
+  height: 350px;
+
+  overflow: hidden;
+}
+
+.offer-popup-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: top;
+
+  display: block;
+}
+
+.offer-popup-image-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.05),
+      rgba(0, 0, 0, 0.55)
+    );
+}
+
+
+/* =====================================================
+   BADGE
+===================================================== */
+
+.offer-popup-badge {
+  position: absolute;
+
+  left: 20px;
+  bottom: 18px;
+
+  padding: 7px 13px;
+
+  background: #d4af37;
+
+  color: #160f0e;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.offer-popup-content {
+  padding: 27px 30px 30px;
+
+  text-align: center;
+}
+
+.offer-popup-eyebrow {
+  margin: 0 0 8px;
+
+  color: #b8860b;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 3px;
+}
+
+.offer-popup-content h2 {
+  margin: 0;
+
+  color: #2b1d1b;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 34px;
+  line-height: 1.15;
+
+  font-weight: 400;
+}
+
+.offer-popup-description {
+  max-width: 370px;
+
+  margin: 13px auto 0;
+
+  color: #756761;
+
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+
+/* =====================================================
+   PRICE
+===================================================== */
+
+.offer-popup-price {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  margin-top: 18px;
+}
+
+.offer-old-price {
+  color: #8d817c;
+
+  font-size: 18px;
+
+  text-decoration: line-through;
+}
+
+.offer-new-price {
+  color: #b8860b;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 38px;
+  font-weight: 600;
+}
+
+
+/* =====================================================
+   COUNTDOWN
+===================================================== */
+
+.offer-popup-countdown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 14px;
+  color: #756761;
+  font-size: 13px;
+}
+
+.offer-popup-countdown strong {
+  min-width: 82px;
+  padding: 5px 9px;
+  border: 1px solid #d8cdbf;
+  background: #fff;
+  color: #b8860b;
+  font-size: 30px;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 1px;
+}
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.offer-popup-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 10px;
+
+  margin-top: 22px;
+}
+
+.offer-popup-actions a {
+  min-height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.offer-popup-actions a:hover {
+  transform: translateY(-2px);
+}
+
+
+/* CALL */
+
+.offer-popup-call {
+  background: #2b1d1b;
+
+  color: #fff;
+}
+
+.offer-popup-call:hover {
+  background: #b8860b;
+}
+
+
+/* WHATSAPP */
+
+.offer-popup-whatsapp {
+  background: #25d366;
+
+  color: #fff;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+  .offer-popup-overlay {
+    padding: 15px;
+  }
+
+  .offer-popup {
+    max-width: 390px;
+  }
+
+  .offer-popup-image {
+    height: 210px;
+  }
+
+  .offer-popup-content {
+    padding: 23px 20px 22px;
+  }
+
+  .offer-popup-content h2 {
+    font-size: 29px;
+  }
+
+  .offer-popup-description {
+    font-size: 13px;
+  }
+
+  .offer-new-price {
+    font-size: 34px;
+  }
+
+  .offer-popup-actions a {
+    min-height: 48px;
+  }
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 380px) {
+
+  .offer-popup-image {
+    height: 180px;
+  }
+
+  .offer-popup-content {
+    padding: 20px 16px;
+  }
+
+  .offer-popup-content h2 {
+    font-size: 26px;
+  }
+
+  .offer-popup-description {
+    margin-top: 10px;
+  }
+
+  .offer-popup-price {
+    margin-top: 14px;
+  }
+
+  .offer-new-price {
+    font-size: 30px;
+  }
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .offer-popup-overlay,
+  .offer-popup {
+    animation: none;
+  }
+
+  .offer-popup-close,
+  .offer-popup-actions a {
+    transition: none;
+  }
+}

@@ -1,0 +1,464 @@
+/* ========================================
+   OFFERS SECTION
+======================================== */
+
+.offers-section {
+  width: 100%;
+
+  min-height: 100vh;
+
+  padding: 100px 40px 120px;
+
+  background: #faf8f5;
+
+  color: #29251f;
+}
+
+
+/* ========================================
+   OFFERS HEADER
+======================================== */
+
+.offers-header {
+  width: 100%;
+
+  max-width: 700px;
+
+  margin: 0 auto 65px;
+
+  text-align: center;
+}
+
+.offers-eyebrow {
+  display: block;
+
+  margin-bottom: 14px;
+
+  color: #b18b57;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  letter-spacing: 4px;
+
+  text-transform: uppercase;
+}
+
+.offers-header h2 {
+  margin: 0;
+
+  color: #29251f;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: clamp(
+    48px,
+    5vw,
+    72px
+  );
+
+  font-weight: 500;
+
+  line-height: 1;
+}
+
+.offers-header p {
+  max-width: 520px;
+
+  margin: 20px auto 0;
+
+  color: #817b73;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 13px;
+
+  line-height: 1.8;
+}
+
+
+/* ========================================
+   OFFER GRID
+======================================== */
+
+.offers-grid {
+  width: 100%;
+
+  max-width: 1450px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 40px;
+
+  align-items: start;
+}
+
+
+/* ========================================
+   OFFER CARD
+======================================== */
+
+.offer-card {
+  width: 100%;
+
+  padding: 10px;
+
+  background: #ffffff;
+
+  border: 1px solid #eee9e1;
+
+  border-radius: 4px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 8px 35px
+    rgba(39, 30, 20, 0.035);
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease,
+    border-color 0.4s ease;
+}
+
+.offer-card:hover {
+  transform: translateY(-8px);
+
+  border-color: #ded0bd;
+
+  box-shadow:
+    0 18px 50px
+    rgba(39, 30, 20, 0.10);
+}
+
+
+/* ========================================
+   OFFER IMAGE
+======================================== */
+
+.offer-image-wrapper {
+  position: relative;
+
+  width: 100%;
+
+  height: 400px;
+
+  overflow: hidden;
+
+  background: #eee9e2;
+}
+
+.offer-image {
+  width: 100%;
+
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  object-position: center;
+
+  transition:
+    transform 0.7s
+    cubic-bezier(
+      0.2,
+      0.7,
+      0.2,
+      1
+    );
+}
+
+.offer-card:hover .offer-image {
+  transform: scale(1.06);
+}
+
+
+/* ========================================
+   IMAGE OVERLAY
+======================================== */
+
+.offer-image-wrapper::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.12),
+      transparent 45%
+    );
+
+  pointer-events: none;
+}
+
+
+/* ========================================
+   OFFER CONTENT
+======================================== */
+
+.offer-content {
+  padding:
+    25px
+    18px
+    20px;
+
+  text-align: center;
+}
+
+.offer-content h3 {
+  margin: 0;
+
+  color: #2c2925;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 31px;
+
+  font-weight: 600;
+
+  line-height: 1.2;
+}
+
+.offer-content p {
+  max-width: 340px;
+
+  min-height: 50px;
+
+  margin: 12px auto 0;
+
+  color: #817b73;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 12px;
+
+  line-height: 1.75;
+}
+
+
+/* ========================================
+   ACTION BUTTONS
+======================================== */
+
+.offer-actions {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 22px;
+}
+
+
+/* ========================================
+   COMMON BUTTON
+======================================== */
+
+.offer-call-btn,
+.offer-whatsapp-btn {
+  flex: 1;
+
+  height: 46px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  border-radius: 3px;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+.offer-call-btn:hover,
+.offer-whatsapp-btn:hover {
+  transform: translateY(-2px);
+}
+
+
+/* ========================================
+   CALL
+======================================== */
+
+.offer-call-btn {
+  background: #29251f;
+
+  color: #ffffff;
+}
+
+.offer-call-btn:hover {
+  background: #b18b57;
+}
+
+
+/* ========================================
+   WHATSAPP
+======================================== */
+
+.offer-whatsapp-btn {
+  background: #248b61;
+
+  color: #ffffff;
+}
+
+.offer-whatsapp-btn:hover {
+  background: #1c704d;
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 1000px) {
+
+  .offers-section {
+    padding:
+      80px
+      25px
+      100px;
+  }
+
+  .offers-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    gap: 25px;
+  }
+
+  .offer-image-wrapper {
+    height: 360px;
+  }
+
+  .offer-content h3 {
+    font-size: 28px;
+  }
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+
+  .offers-section {
+    padding:
+      65px
+      16px
+      75px;
+  }
+
+  .offers-header {
+    margin-bottom: 40px;
+  }
+
+  .offers-header h2 {
+    font-size: 50px;
+  }
+
+  .offers-header p {
+    font-size: 12px;
+  }
+
+  .offers-grid {
+    width: 100%;
+
+    max-width: 440px;
+
+    grid-template-columns: 1fr;
+
+    gap: 28px;
+  }
+
+  .offer-card {
+    width: 100%;
+  }
+
+  .offer-image-wrapper {
+    height: 350px;
+  }
+
+  .offer-content {
+    padding:
+      22px
+      12px
+      18px;
+  }
+
+  .offer-content h3 {
+    font-size: 29px;
+  }
+
+  .offer-content p {
+    font-size: 12px;
+
+    min-height: auto;
+  }
+
+  .offer-actions {
+    gap: 10px;
+  }
+
+  .offer-call-btn,
+  .offer-whatsapp-btn {
+    height: 46px;
+
+    font-size: 12px;
+  }
+}
+
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 380px) {
+
+  .offers-section {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .offer-image-wrapper {
+    height: 300px;
+  }
+
+  .offer-content h3 {
+    font-size: 26px;
+  }
+}
